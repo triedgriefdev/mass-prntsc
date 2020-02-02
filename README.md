@@ -9,7 +9,7 @@
 > Powerful images grabber from prnt.sc
 
 ## Usage
-- ⚠️ WARNING! Please use VPN or Proxy, your ip-address might be banned.⚠️
+⚠️ WARNING! Please use VPN or Proxy, your ip-address might be banned.⚠️
 
 + Install Python 3.6 or higher
 + Install requirement: `python -m pip install -r requirements.txt`
