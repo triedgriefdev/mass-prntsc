@@ -23,5 +23,5 @@ def main(tasks: int, folder: str):
     loop.run_forever()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

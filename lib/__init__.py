@@ -11,10 +11,7 @@ class LightShot:
     async def get_image() -> str:
         while True:
             url = "http://prnt.sc/" + random_string(6)
-            soup = BeautifulSoup(
-                (await httpx.get(url)).text,
-                "html.parser"
-            )
+            soup = BeautifulSoup((await httpx.get(url)).text, "html.parser")
             try:
                 return soup.img["src"]
             except TypeError:
@@ -24,7 +21,9 @@ class LightShot:
     async def save(url: str, folder_name: str):
         try:
             data = await httpx.get(url, allow_redirects=True, headers=uagent)
-            async with aiofiles.open(f"{folder_name}/{url.split('/')[-1]}", mode="wb") as img:
+            async with aiofiles.open(
+                f"{folder_name}/{url.split('/')[-1]}", mode="wb"
+            ) as img:
                 await img.write(data.content)
         except InvalidURL:
             return
